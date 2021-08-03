@@ -61,10 +61,11 @@ local function genTree(node)
             y=child.startPos.y + math.sin(child.rot) * length // 1
         }
         child.depth = node.depth + 1
-        renderer:setDrawColor(
-            child.endPos.x%256 << 16 |
-            child.rot/(math.pi*2)*255//1 << 8 |
-            child.endPos.y%256)
+        renderer:setDrawColor({
+            r=child.depth/MAX_BRANCH_DEPTH*255//1,
+            g=math.abs(math.sin(child.endPos.x/1000))*255//1,
+            b=math.abs(math.sin(child.endPos.y/1000))*255//1
+        })
         renderer:drawLine({
             x1=child.startPos.x,
             y1=child.startPos.y,
