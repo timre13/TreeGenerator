@@ -2,6 +2,8 @@
 
 ## Screenshot
 ![](./readme/sshot1.png)
+![](./readme/sshot2.png)
+![](./readme/sshot3.png)
 
 ## Dependencies
 * Lua 5.3+
